@@ -2,7 +2,8 @@
 
 .route-form {
 
-  width: 650px;
+    width: 90%;
+  max-width: 700px;
 
   padding: 40px;
 
@@ -102,4 +103,81 @@
 
   box-shadow:
       0 8px 20px rgba(37,99,235,0.4);
+}
+/* Tablets */
+@media (max-width: 768px) {
+
+  .route-form {
+
+    width: 95%;
+
+    padding: 25px;
+
+    border-radius: 20px;
+  }
+
+  .input-row label {
+
+    font-size: 16px;
+  }
+
+  .input-row input {
+
+    height: 50px;
+
+    font-size: 15px;
+  }
+
+  .find-btn {
+
+    height: 55px;
+
+    font-size: 18px;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+
+  .route-form {
+
+    width: 95%;
+
+    padding: 20px;
+
+    border-radius: 16px;
+  }
+
+  .input-row {
+
+    margin-bottom: 18px;
+  }
+
+  .input-row label {
+
+    font-size: 14px;
+  }
+
+  .input-row input {
+
+    height: 48px;
+
+    padding: 0 15px;
+
+    font-size: 14px;
+  }
+
+  .find-btn {
+
+    height: 50px;
+
+    font-size: 16px;
+  }
+}
+.input-row input:focus {
+
+  border: 2px solid #2563eb;
+
+  box-shadow:
+      0 0 15px rgba(37,99,235,0.3);
 }

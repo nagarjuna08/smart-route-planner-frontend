@@ -1,3 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -38,7 +51,7 @@ body {
 
   display: flex;
   flex-direction: column;
-
+  height: calc(100vh - 70px); 
   gap: 20px;
 }
 
@@ -50,7 +63,18 @@ body {
 
   justify-content: space-between;
 }
+.side-panel {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+}
 
+@media (max-width: 768px) {
+  .side-panel {
+    width: 100%;
+    padding: 10px;
+  }
+}
 .input-row label {
 
   font-size: 22px;
@@ -102,7 +126,24 @@ body {
 
   display: flex;
 
-  height: calc(100vh - 60px);
+  height: calc(100vh - 70px);
+
+  gap: 20px;
+
+  padding: 20px;
+
+  background: #f1f5f9;
+}
+@media (max-width: 768px) {
+
+  .route-content {
+
+    flex-direction: column;
+
+    height: auto;
+
+    padding: 10px;
+  }
 }
 
 .map-container {
@@ -129,19 +170,29 @@ body {
 
 .side-panel {
 
-  width: 220px;
+   width: 340px;
 
-  background: gray;
+  padding: 20px;
 
-  padding: 15px;
+  background: #f5f7fb;
 
   display: flex;
 
   flex-direction: column;
 
-  gap: 15px;
-}
+  gap: 20px;
 
+  overflow-y: auto;
+}
+@media (max-width: 768px) {
+
+  .side-panel {
+
+    width: 100%;
+
+    max-height: none;
+  }
+}
 .side-panel button {
 
   height: 50px;
@@ -162,8 +213,23 @@ body {
   opacity: 0.9;
 } 
 .map-wrapper {
-  width: 100%;
-  height: 100%;
+  flex: 1;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.1);
+}
+@media (max-width: 768px) {
+
+  .map-wrapper {
+
+    width: 100%;
+
+    height: 60vh;
+  }
 }
 .side-panel {
   width: 320px;
@@ -225,7 +291,7 @@ body {
 
   justify-content: center;
 
-  font-size: 28px;
+  font-size: clamp(18px, 3vw, 28px);
 
   font-weight: bold;
 
