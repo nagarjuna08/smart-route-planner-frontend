@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+# Smart Route Planner
+Smart Route Planner is a full-stack web application that helps users find optimized routes between locations and discover nearby places such as restaurants, hotels, fuel stations, and tourist attractions along the route.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
+* Find routes between source and destination
+* Route optimization with intermediate stops
+* Discover restaurants along the route
+* Discover hotels along the route
+* Discover fuel stations along the route
+* Discover tourist attractions along the route
+* Interactive map visualization using Leaflet
+* Responsive UI for desktop and mobile devices
+* Error handling for invalid locations
+* Validation for same source and destination
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Frontend
 
-## React Compiler
+* React
+* TypeScript
+* React Leaflet
+* CSS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Backend
 
-## Expanding the ESLint configuration
+* Spring Boot
+* Java 21
+* Maven
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### APIs
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* OpenStreetMap Nominatim
+* OSRM Routing Engine
+* Overpass API
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Architecture
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+User Input → Spring Boot API → Nominatim → OSRM → Route Generation → React + Leaflet Map
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Live Demo
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Frontend:
+https://smart-route-planner-frontend.vercel.app/
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Backend:
+https://smart-route-planner-backend-kttq.onrender.com
+
+## Future Enhancements
+
+* Current location support
+* Multiple stops
+* live tracking
+* Ai recommendations of places
+
+## Author
+
+Nagarjuna Kakunuri
