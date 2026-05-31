@@ -5,7 +5,7 @@ Smart Route Planner is a full-stack web application that helps users find optimi
 * Find routes between source and destination
 * Route optimization with intermediate stops
 * Discover restaurants along the route
-* Discover hotels along the route
+* Discover hotels along the route 
 * Discover fuel stations along the route
 * Discover tourist attractions along the route
 * Interactive map visualization using Leaflet
