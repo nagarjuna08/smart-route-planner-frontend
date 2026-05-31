@@ -1,5 +1,5 @@
 import RouteForm from "../components/RouteForm";
-import "./HomePage.css";
+import "../styles/HomePage.css";
 
 function HomePage() {
   return (

@@ -1,5 +1,4 @@
 .home-page {
-
   min-height: 100vh;
 
   background-image: url("/images/route-background.png");
@@ -15,102 +14,105 @@
   justify-content: center;
 
   align-items: center;
-  overflow: hidden;
 }
 
 .overlay {
-
   width: 100%;
+
   min-height: 100vh;
 
-  background:
-    rgba(0,0,0,0.45);
+  background: rgba(0, 0, 0, 0.45);
 
   display: flex;
 
   justify-content: center;
 
   align-items: center;
+
   padding: 20px;
 }
 
 .hero-section {
-
   width: 100%;
-  max-width: 1000px;
+
+  max-width: 1200px;
 
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
+
+  text-align: center;
 
   color: white;
 
-
-  padding: 0 20px;
-
+  padding: 40px 20px;
 }
 
-.hero-section h1 {
-
-    font-size: clamp(2.2rem, 6vw, 4.5rem);
-
-  text-shadow:
-      0 4px 20px rgba(0,0,0,0.4);
+.main-title {
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
 
   font-weight: 800;
 
+  letter-spacing: 3px;
+
+  line-height: 1.1;
+
   margin-bottom: 15px;
 
-  letter-spacing: 2px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .hero-section p {
-
-
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(1.2rem, 2vw, 2rem);
 
   margin-bottom: 10px;
 }
 
 .sub-text {
-
-  font-size: clamp(1rem, 2vw, 1.5rem);
-
-  max-width: 700px;
-
-  margin: auto;
+  max-width: 850px;
 
   margin-bottom: 40px;
 
-  line-height: 1.7;
+  font-size: clamp(1rem, 1.8vw, 1.4rem);
+
+  line-height: 1.6;
 }
-.main-title {
 
-  font-size: clamp(2rem, 5vw, 5rem);
+/* Laptop */
 
-  font-weight: 800;
+@media (max-width: 1366px) {
+  .main-title {
+    font-size: 4.5rem;
+  }
 
-  letter-spacing: 4px;
-
-  margin-bottom: 20px;
-
-  text-shadow:
-      0 4px 20px rgba(0,0,0,0.4);
+  .sub-text {
+    max-width: 750px;
+  }
 }
+
+/* Tablet */
+
 @media (max-width: 768px) {
-
   .hero-section {
-
-    padding: 15px;
+    padding: 20px;
   }
 
   .main-title {
+    font-size: 3rem;
 
     letter-spacing: 2px;
   }
 
+  .hero-section p {
+    font-size: 1.2rem;
+  }
+
   .sub-text {
+    font-size: 1rem;
 
     line-height: 1.5;
 
@@ -118,20 +120,18 @@
   }
 }
 
+/* Mobile */
+
 @media (max-width: 480px) {
-
-  .hero-section h1 {
-
-    font-size: 2rem;
+  .main-title {
+    font-size: 2.2rem;
   }
 
   .hero-section p {
-
     font-size: 1rem;
   }
 
   .sub-text {
-
     font-size: 0.95rem;
   }
 }

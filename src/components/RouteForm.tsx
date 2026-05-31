@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./RouteForm.css";
+import "../styles/RouteForm.css";
 
 import { findRoute } from "../api/routeApi";
 
@@ -31,7 +31,7 @@ function RouteForm() {
     <div className="route-form-container">
       <div className="route-form">
         <div className="input-row">
-          <label>START :</label>
+          <label>ORIGIN :</label>
 
           <input
             type="text"
@@ -41,7 +41,7 @@ function RouteForm() {
         </div>
 
         <div className="input-row">
-          <label>END :</label>
+          <label>DESTINATION :</label>
 
           <input
             type="text"

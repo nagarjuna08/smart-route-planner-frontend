@@ -1,6 +1,7 @@
 import { getPlaces } from "../api/placeApi";
 import { addStop } from "../api/routeApi";
 import { useNavigate } from "react-router-dom";
+import "../styles/SidePanel.css";
 
 type Props = {
   routeData: any;

@@ -1,0 +1,208 @@
+.side-panel {
+  flex: 1;
+
+  min-width: 320px;
+
+  max-width: 400px;
+
+  padding: 20px;
+
+  background: #f5f7fb;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+
+  overflow-y: auto;
+}
+
+/* Cards */
+
+.route-summary,
+.selected-stop,
+.places-section,
+.summary-card,
+.itinerary-card,
+.selected-card,
+.places-card {
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 20px;
+
+  box-shadow:
+    0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Titles */
+
+.route-summary h3,
+.selected-stop h3,
+.places-section h3,
+.summary-card h2,
+.itinerary-card h3,
+.selected-card h3,
+.places-card h3 {
+  margin-top: 0;
+
+  margin-bottom: 15px;
+
+  color: #1e293b;
+}
+
+/* Summary */
+
+.summary-item {
+  background: #f8fafc;
+
+  padding: 14px;
+
+  margin-bottom: 10px;
+
+  border-radius: 12px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.route-step {
+  font-weight: 600;
+
+  color: #334155;
+}
+
+.stop {
+  color: #f97316;
+}
+
+.arrow {
+  text-align: center;
+
+  font-size: 20px;
+
+  margin: 5px 0;
+
+  color: #94a3b8;
+}
+
+/* Selected Place */
+
+.selected-place {
+  background: #f8fafc;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  margin-bottom: 15px;
+
+  font-weight: 600;
+}
+
+/* Buttons */
+
+.side-panel button {
+  width: 100%;
+
+  padding: 14px;
+
+  margin-top: 10px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+/* Category Buttons */
+
+.restaurant-btn {
+  background: #2563eb;
+}
+
+.hotel-btn {
+  background: #14b8a6;
+}
+
+.fuel-btn {
+  background: #8b5cf6;
+}
+
+.tourist-btn {
+  background: #f59e0b;
+}
+
+/* Optimize Button */
+
+.optimize-btn {
+  background: #2563eb;
+}
+
+/* Hover */
+
+.restaurant-btn:hover,
+.hotel-btn:hover,
+.fuel-btn:hover,
+.tourist-btn:hover,
+.optimize-btn:hover {
+  transform: translateY(-2px);
+
+  opacity: 0.95;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+
+  .side-panel {
+
+    width: 100%;
+
+    max-width: 100%;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .side-panel {
+
+    min-width: auto;
+
+    padding: 15px;
+  }
+
+  .route-summary,
+  .selected-stop,
+  .places-section,
+  .summary-card,
+  .itinerary-card,
+  .selected-card,
+  .places-card {
+
+    padding: 16px;
+  }
+
+  .side-panel button {
+
+    font-size: 15px;
+
+    padding: 12px;
+  }
+}

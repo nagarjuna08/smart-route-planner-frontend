@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import RouteMap from "../components/RouteMap";
 import SidePanel from "../components/SidePanel";
 import { useState } from "react";
+import "../styles/RoutePage.css";
 
 function RoutePage() {
   const location = useLocation();
@@ -20,7 +21,7 @@ function RoutePage() {
           places={places}
           setSelectedStop={setSelectedStop}
         />
-  
+
         <SidePanel
           routeData={routeData}
           setPlaces={setPlaces}
