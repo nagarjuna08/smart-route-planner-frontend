@@ -5,6 +5,8 @@ import {
   Popup,
   Polyline,
 } from "react-leaflet";
+import { useEffect } from "react";
+import { useMap } from "react-leaflet";
 
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -28,6 +30,72 @@ type Props = {
   places: any[];
 };
 
+function FitBounds({ polyline }: any) {
+  const map = useMap();
+
+  useEffect(() => {
+    if (polyline.length > 0) {
+      // Add small delay to ensure map is fully rendered
+      const timer = setTimeout(() => {
+        try {
+          map.fitBounds(polyline, { padding: [50, 50] });
+          map.invalidateSize(true);
+        } catch (e) {
+          console.error("Error fitting bounds:", e);
+        }
+      }, 300);
+
+      return () => clearTimeout(timer);
+    }
+  }, [map, polyline]);
+
+  return null;
+}
+
+function ResizeMap() {
+  const map = useMap();
+
+  useEffect(() => {
+    // Small initial delay to ensure container is mounted
+    const initialTimer = setTimeout(() => {
+      map.invalidateSize(true);
+    }, 100);
+
+    // Handle window resize events
+    const handleResize = () => {
+      map.invalidateSize(true);
+    };
+
+    // Handle orientation change on mobile
+    const handleOrientationChange = () => {
+      setTimeout(() => {
+        map.invalidateSize(true);
+      }, 300);
+    };
+
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("orientationchange", handleOrientationChange);
+
+    // Use ResizeObserver to detect container size changes
+    const mapContainer = map.getContainer();
+    const resizeObserver = new ResizeObserver(() => {
+      map.invalidateSize(true);
+    });
+
+    if (mapContainer) {
+      resizeObserver.observe(mapContainer);
+    }
+
+    return () => {
+      clearTimeout(initialTimer);
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("orientationchange", handleOrientationChange);
+      resizeObserver.disconnect();
+    };
+  }, [map]);
+
+  return null;
+}
 function RouteMap({ routeData, places, setSelectedStop }: Props) {
   const routeCoordinates = routeData?.coordinates || [];
 
@@ -45,7 +113,6 @@ function RouteMap({ routeData, places, setSelectedStop }: Props) {
   return (
     <div className="map-wrapper">
       <MapContainer
-        key={JSON.stringify(routeCoordinates)}
         center={[
           routeCoordinates[0]?.latitude || 17.385,
           routeCoordinates[0]?.longitude || 78.486,
@@ -56,7 +123,12 @@ function RouteMap({ routeData, places, setSelectedStop }: Props) {
           width: "100%",
         }}
       >
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <ResizeMap />
+        <FitBounds polyline={polyline} />
+        <TileLayer
+          attribution="&copy; OpenStreetMap contributors"
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
 
         {start && (
           <Marker position={[start.latitude, start.longitude]}>
