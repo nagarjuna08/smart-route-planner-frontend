@@ -204,28 +204,3 @@
     padding: 10px;
   }
 }
-  }
-
-  .side-panel button {
-
-    font-size: 15px;
-
-    padding: 12px;
-  }
-}
-@media (max-width: 1024px) {
-  .route-content {
-    flex-direction: column;
-  }
-
-  .map-wrapper {
-    order: 1;
-    width: 100%;
-    height: 65vh;
-  }
-
-  .side-panel {
-    order: 2;
-    width: 100%;
-  }
-}
