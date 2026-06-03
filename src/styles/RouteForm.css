@@ -96,6 +96,32 @@
   box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
 }
 
+.find-btn:disabled {
+  opacity: 0.7;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+.search-status {
+  margin-top: 18px;
+
+  padding: 14px 18px;
+
+  border-radius: 14px;
+
+  background: rgba(37, 99, 235, 0.16);
+
+  color: #e0f2fe;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+}
+
 /* Tablet */
 
 @media (max-width: 768px) {
