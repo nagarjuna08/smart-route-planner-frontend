@@ -69,7 +69,7 @@ function RouteForm() {
         {isSearching && (
           <div className="search-status">
             Your route search has started. Please wait while we find the best
-            route.(please enter city names)
+            route.
           </div>
         )}
       </div>
